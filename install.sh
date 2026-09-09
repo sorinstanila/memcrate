@@ -51,9 +51,6 @@ resolve_install_dir() {
         echo "/usr/local/bin"
     elif [ "$(id -u)" -eq 0 ]; then
         echo "/usr/local/bin"
-    elif command -v sudo >/dev/null 2>&1; then
-        # /usr/local/bin via sudo is the standard expectation; fall back to user-local if sudo is unavailable.
-        echo "/usr/local/bin"
     else
         echo "$HOME/.local/bin"
     fi
